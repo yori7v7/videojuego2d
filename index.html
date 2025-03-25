@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Videojuego 2D</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico">
+</head>
+<body onclick="playMusic()">
+
+    <header class="text-center p-3">
+        <h1>Mi Videojuego 2D</h1>
+    </header>
+
+    <main class="d-flex flex-column align-items-center">
+        <div id="instructions">
+            <h2>Instrucciones:</h2>
+            <p>🔹 Haz clic en los enemigos para eliminarlos y ganar puntos.</p>
+            <p>🔹 Evita que escapen fuera de la pantalla.</p>
+            <p>🔹 La música comenzará al hacer clic en cualquier parte.</p>
+        </div>
+        <p id="score">Puntuación: 0</p>
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+    </main>
+
+    <footer class="text-center p-3">
+        <p>Creado por [Jose Hector Rosales Cabrera] - Número de Control: [22201106]</p>
+        <p>Creado por [Diego Yoresl Castelan Silva] - Número de Control: [22200717]</p>
+    </footer>
+
+    <audio id="bgMusic" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function playMusic() {
+            document.getElementById("bgMusic").play();
+            document.body.onclick = null; // Para que solo se active una vez
+        }
+    </script>
+
+    <script src="game.js"></script>
+</body>
+</html>
